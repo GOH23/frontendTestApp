@@ -9,7 +9,6 @@ export type ModalProps = {
     Data?: Worker_Type[]
 }
 export function TestModal({ data }: { data: ModalProps }) {
-
     return (<AnimatePresence>
         {data.open && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed backdrop-blur-md bg-slate-500/50 top-0 size-full">
             <AnimatePresence mode="wait">
