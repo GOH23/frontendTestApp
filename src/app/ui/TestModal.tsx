@@ -10,7 +10,7 @@ export type ModalProps = {
 }
 export function TestModal({ data }: { data: ModalProps }) {
     return (<AnimatePresence>
-        {data.open && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed backdrop-blur-md bg-slate-500/50 top-0 size-full">
+        {data.open && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed backdrop-blur-md bg-slate-500/50 z-50 top-0 size-full">
             <AnimatePresence mode="wait">
                 {data.open &&
                     <motion.div initial={{ y: 100, opacity: 1 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -100, opacity: 0 }} transition={{ duration: 2 }} className="flex justify-center items-end size-full">
