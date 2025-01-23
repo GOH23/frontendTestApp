@@ -4,7 +4,7 @@ import 'swiper/css';
 import { useCallback, useEffect, useRef, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { TestModal } from "./TestModal"
-import {LeftOutlined,RightOutlined} from '@ant-design/icons'
+import { LeftOutlined, RightOutlined, SwapLeftOutlined, SwapRightOutlined } from '@ant-design/icons'
 export type TreeViewWorkers = {
     workerListId: string
     workerListName: string
@@ -103,11 +103,11 @@ export function TableBlockComponent({
             <motion.div initial={{ opacity: 0 }} exit={{ opacity: 0, transition: { delay: .25 } }} animate={{ opacity: 1 }} transition={{ delay: .75 }} className="size-5 rounded-full bg-yellow-500"></motion.div>
         </div>
         <div className="flex justify-end gap-x-1">
-            <div className="size-10 flex justify-center cursor-pointer border hover:bg-white duration-700 hover:border-yellow-500 border-transparent rounded-md bg-yellow-500" onClick={() => swiperRef.current?.swiper.slidePrev()}>
-                <LeftOutlined />
+            <div className="flex justify-center cursor-pointer text-yellow-500 duration-700 hover:text-yellow-600 rounded-md text-[35px]" onClick={() => swiperRef.current?.swiper.slidePrev()}>
+                <SwapLeftOutlined />
             </div>
-            <div className=" size-10 flex justify-center cursor-pointer rounded-md border hover:bg-white  duration-700 hover:border-yellow-500 border-transparent bg-yellow-500" onClick={() => swiperRef.current?.swiper.slideNext()}>
-                <RightOutlined />
+            <div className="flex justify-center cursor-pointer rounded-md text-yellow-500 duration-700 hover:text-yellow-600 text-[35px]" onClick={() => swiperRef.current?.swiper.slideNext()}>
+                <SwapRightOutlined />
             </div>
         </div>
         <Swiper ref={swiperRef} breakpoints={{// when window width is >= 320px
